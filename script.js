@@ -107,12 +107,14 @@ console.log(regText6('[A-Z]', 'g'))
 //==================================
 
 
-// Oh shoot! Our wire cut out halfway through the confession. Can you find out what the criminal said before "I commited" and "I hope I don't get arrested!"
+// Oh shoot! Our wire cut out halfway through the confession. Can you find out what the criminal said before " I commited" and "I hope I don't get arrested!"
 
-regText4 = (string) => {
+regText7 = (string, flag) => {
   myString = "Oops I cut my finger, so much blood! It's like that time I commited murder. I hope I don't get arrested! My girlfriend would be so mad, we're in a very commited relationship."
-  let newRegEx = new RegExp(string)
+  let newRegEx = new RegExp(string, flag)
+  console.log(newRegEx)
   return myString.match(newRegEx)
 }
 
-console.log(regText4('knife', 'g'))
+console.log(regText7("I commited[a-z .!?]*I hope I don't get arrested!", "ig"))
+//returns ["I commited murder. I hope I don't get arrested!"]
